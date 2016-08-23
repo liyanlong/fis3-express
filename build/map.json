@@ -1,0 +1,52 @@
+{
+    "res": {
+        "page/index.html": {
+            "uri": "/page/index.html",
+            "type": "html",
+            "extras": {
+                "async": [
+                    "static/js/jquery-3.1.0.js",
+                    "static/modules/index.js"
+                ]
+            }
+        },
+        "page/index.jade": {
+            "uri": "/page/index.jade",
+            "type": "jade"
+        },
+        "static/js/jquery-3.1.0.js": {
+            "uri": "/static/js/jquery-3.1.0.js",
+            "type": "js"
+        },
+        "static/js/require.js": {
+            "uri": "/static/js/require.js",
+            "type": "js"
+        },
+        "static/modules/index.js": {
+            "uri": "/static/modules/index.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "static/modules/index"
+            },
+            "deps": [
+                "static/js/jquery-3.1.0.js"
+            ]
+        },
+        "widget/header/header.css": {
+            "uri": "/static/widget/header/header.css",
+            "type": "css"
+        },
+        "widget/header/header.html": {
+            "uri": "/widget/header/header.html",
+            "type": "html"
+        },
+        "widget/header/header.js": {
+            "uri": "/static/widget/header/header.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "widget/header/header"
+            }
+        }
+    },
+    "pkg": {}
+}

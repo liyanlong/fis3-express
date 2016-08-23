@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>demo</title>
+    </head>
+    <script type="text/javascript" src="/static/js/require.js"></script>
+    <body>
+        Hello World
+        <img src="/static/img/logo.png" alt="" />
+    </body>
+    <script type="text/javascript">
+        require(["/static/js/jquery-3.1.0","/static/modules/index"], function (jquery) {
+            console.log(arguments);
+        });
+    </script>
+</html>
