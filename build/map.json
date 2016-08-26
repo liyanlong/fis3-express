@@ -1,36 +1,36 @@
 {
     "res": {
-        "page/index.html": {
-            "uri": "/page/index.html",
-            "type": "html",
-            "extras": {
-                "async": [
-                    "static/js/jquery-3.1.0.js",
-                    "static/modules/index.js"
-                ]
-            }
-        },
-        "page/index.jade": {
-            "uri": "/page/index.jade",
-            "type": "jade"
-        },
-        "static/js/jquery-3.1.0.js": {
-            "uri": "/static/js/jquery-3.1.0.js",
+        "jquery": {
+            "uri": "/static/js/jquery.js",
             "type": "js"
         },
         "static/js/require.js": {
             "uri": "/static/js/require.js",
             "type": "js"
         },
-        "static/modules/index.js": {
-            "uri": "/static/modules/index.js",
+        "static/modules/ui/tabs.js": {
+            "uri": "/static/modules/ui/tabs.js",
             "type": "js",
             "extras": {
-                "moduleId": "static/modules/index"
+                "moduleId": "ui/tabs"
             },
             "deps": [
-                "static/js/jquery-3.1.0.js"
+                "jquery"
             ]
+        },
+        "views/index.html": {
+            "uri": "/views/index.html",
+            "type": "html",
+            "extras": {
+                "async": [
+                    "widget/header/header.js",
+                    "static/modules/ui/tabs.js"
+                ]
+            }
+        },
+        "views/index.jade": {
+            "uri": "/views/index.jade",
+            "type": "jade"
         },
         "widget/header/header.css": {
             "uri": "/static/widget/header/header.css",
@@ -38,14 +38,23 @@
         },
         "widget/header/header.html": {
             "uri": "/widget/header/header.html",
-            "type": "html"
+            "type": "html",
+            "deps": [
+                "widget/header/header.js",
+                "widget/header/header.css"
+            ]
         },
         "widget/header/header.js": {
             "uri": "/static/widget/header/header.js",
             "type": "js",
             "extras": {
                 "moduleId": "widget/header/header"
-            }
+            },
+            "deps": [
+                "jquery",
+                "static/modules/ui/tabs.js",
+                "widget/header/header.css"
+            ]
         }
     },
     "pkg": {}

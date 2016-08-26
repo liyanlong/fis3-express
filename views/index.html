@@ -7,10 +7,10 @@
     <script type="text/javascript" src="/static/js/require.js"></script>
     <body>
         Hello World
-        <img src="/static/img/logo.png" alt="" />
+        <img src="/static/images/logo.png?__inline" alt="" />
     </body>
     <script type="text/javascript">
-        require(["/static/js/jquery-3.1.0","/static/modules/index"], function (jquery) {
+        require(['widget/header/header', 'ui/tabs'], function (jquery) {
             console.log(arguments);
         });
     </script>
