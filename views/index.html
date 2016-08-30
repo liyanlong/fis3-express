@@ -9,9 +9,11 @@
         <%- include widget/header/header.html%>
     </body>
     <script type="text/javascript">
-        // file sync
+        var a = 'this is sync';
         var base = require(['static/modules/base']);
-        console.log(base);
+        console.log('base', base);
+        console.log('this is sync');
+
         require(['widget/header/header', 'ui/tabs'], function (jquery) {
             console.log(arguments);
         });

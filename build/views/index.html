@@ -3,11 +3,11 @@
     <head>
         <meta charset="utf-8">
         <title>demo</title>
-    
+
     <link rel="stylesheet" type="text/css" href="/static/widget/header/header.css" />
 </head>    <body>
         <%- include widget/header/header.html%>
-    
+
 <script type="text/javascript" src="/static/js/require.js"></script>
 <script type="text/javascript">/*resourcemap*/
 require.config({paths:{
@@ -17,11 +17,13 @@ require.config({paths:{
   "widget/header/header": "/static/widget/header/header"
 }});
 
-        // file sync
+        var a = 'this is sync';
         var base = require(['base']);
-        console.log(base);
+
         require(['widget/header/header', 'ui/tabs'], function (jquery) {
             console.log(arguments);
         });
+        console.log('this is sync');
+
     </script>
-<script type="text/javascript" charset="utf-8" src="http://127.0.0.1:8132/livereload.js"></script></body></html>
+</body></html>
