@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./bin/server.js",
-    "stop": ""
+    "dev": "supervisor ./bin/server.js"
   },
   "config": {
     "port": "3000"

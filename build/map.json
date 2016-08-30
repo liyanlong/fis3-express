@@ -2,11 +2,27 @@
     "res": {
         "jquery": {
             "uri": "/static/js/jquery.js",
-            "type": "js"
+            "type": "js",
+            "extras": {
+                "moduleId": "jquery"
+            }
         },
         "static/js/require.js": {
             "uri": "/static/js/require.js",
             "type": "js"
+        },
+        "static/modules/base.js": {
+            "uri": "/static/modules/base.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "base"
+            },
+            "deps": [
+                "static/js/require.js",
+                "jquery",
+                "static/js/jquery-3.1.0.js"
+            ],
+            "pkg": "p0"
         },
         "static/modules/ui/tabs.js": {
             "uri": "/static/modules/ui/tabs.js",
@@ -15,14 +31,17 @@
                 "moduleId": "ui/tabs"
             },
             "deps": [
+                "static/js/require.js",
                 "jquery"
-            ]
+            ],
+            "pkg": "p0"
         },
         "views/index.html": {
             "uri": "/views/index.html",
             "type": "html",
             "extras": {
                 "async": [
+                    "static/modules/base.js",
                     "widget/header/header.js",
                     "static/modules/ui/tabs.js"
                 ]
@@ -51,11 +70,24 @@
                 "moduleId": "widget/header/header"
             },
             "deps": [
-                "jquery",
                 "static/modules/ui/tabs.js",
                 "widget/header/header.css"
             ]
         }
     },
-    "pkg": {}
+    "pkg": {
+        "p0": {
+            "uri": "/static/vendor.js",
+            "type": "js",
+            "has": [
+                "static/modules/base.js",
+                "static/modules/ui/tabs.js"
+            ],
+            "deps": [
+                "static/js/require.js",
+                "jquery",
+                "static/js/jquery-3.1.0.js"
+            ]
+        }
+    }
 }

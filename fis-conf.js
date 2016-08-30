@@ -27,13 +27,17 @@ fis.hook('amd', {
 
     // 配置项
     paths: {
-        jquery: '/static/js/jquery.js'
+        jquery: '/static/js/jquery.js',
+        $: '/static/js/jquery-3.1.0.js'
     },
     packages: [{
         name: 'ui',
         location: '/static/modules/ui',
         main: 'index.js'
-    }]
+    }],
+
+    // 取消 require, module, exports 内置模块
+    skipBuiltinModules: false
 });
 
 // 发布 static 文件
@@ -51,23 +55,19 @@ fis.match('/static/modules/(**).js', {
 // 转换
 fis.match('/static/js/jquery.js', {
     id: 'jquery',
-    skipDepsAnalysis: true,
+    // umd2commonjs: true,
+    // skipDepsAnalysis: true,
     isMod: true
 });
+
 
 // 发布组件到静态目录
 fis.match('/widget/**', {
     isMod : true,
     release: '/static$0',
-    // 同名依赖
+    // 同名依赖， 这只是在 map.json 文件生成依赖
     useSameNameRequire: true
 });
-
-// js 模块化
-// fis.match('/widget/{*,**/*}.js', {
-//     isMod : true
-//     // 显示声明依赖
-// });
 
 // 发布 widget 模板
 // 组件模板要求 有命名空间
@@ -91,4 +91,9 @@ fis.match('::package', {
         resourceType: 'amd',
         useInlineMap: true // 资源映射表内嵌
     })
+});
+
+// 生产环境, 合并所有模块js
+fis.match('/static/modules/**.js', {
+    packTo: '/static/vendor.js'
 });

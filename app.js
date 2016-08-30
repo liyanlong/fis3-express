@@ -27,7 +27,7 @@ app.use('/static', express.static(path.join(__dirname, 'build', 'static')));
 
 // 设置首页
 app.get('/', function (req, res) {
-    res.render('page/index.html');
+    res.render('index.html');
 });
 
 // 挂载其他目录

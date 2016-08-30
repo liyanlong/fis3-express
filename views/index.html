@@ -6,10 +6,12 @@
     </head>
     <script type="text/javascript" src="/static/js/require.js"></script>
     <body>
-        Hello World
-        <img src="/static/images/logo.png?__inline" alt="" />
+        <%- include widget/header/header.html%>
     </body>
     <script type="text/javascript">
+        // file sync
+        var base = require(['static/modules/base']);
+        console.log(base);
         require(['widget/header/header', 'ui/tabs'], function (jquery) {
             console.log(arguments);
         });
