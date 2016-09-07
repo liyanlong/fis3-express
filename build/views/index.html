@@ -3,27 +3,29 @@
     <head>
         <meta charset="utf-8">
         <title>demo</title>
-
+    
     <link rel="stylesheet" type="text/css" href="/static/widget/header/header.css" />
 </head>    <body>
         <%- include widget/header/header.html%>
-
+    
 <script type="text/javascript" src="/static/js/require.js"></script>
 <script type="text/javascript">/*resourcemap*/
 require.config({paths:{
   "jquery": "/static/js/jquery",
   "base": "/static/vendor",
   "ui/tabs": "/static/vendor",
+  "ui/timeline": "/static/vendor",
   "widget/header/header": "/static/widget/header/header"
 }});
 
         var a = 'this is sync';
         var base = require(['base']);
+        var jquery = require(['jquery'], function ($) {
+            console.log($)
+        });
 
         require(['widget/header/header', 'ui/tabs'], function (jquery) {
             console.log(arguments);
         });
-        console.log('this is sync');
-
     </script>
 </body></html>

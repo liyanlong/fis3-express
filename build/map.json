@@ -36,12 +36,28 @@
             ],
             "pkg": "p0"
         },
+        "static/modules/ui/timeline.js": {
+            "uri": "/static/modules/ui/timeline.js",
+            "type": "js",
+            "extras": {
+                "moduleId": "ui/timeline"
+            },
+            "pkg": "p0"
+        },
+        "tests/async.js": {
+            "uri": "/tests/async.js",
+            "type": "js",
+            "deps": [
+                "q"
+            ]
+        },
         "views/index.html": {
             "uri": "/views/index.html",
             "type": "html",
             "extras": {
                 "async": [
                     "static/modules/base.js",
+                    "jquery",
                     "widget/header/header.js",
                     "static/modules/ui/tabs.js"
                 ]
@@ -81,7 +97,8 @@
             "type": "js",
             "has": [
                 "static/modules/base.js",
-                "static/modules/ui/tabs.js"
+                "static/modules/ui/tabs.js",
+                "static/modules/ui/timeline.js"
             ],
             "deps": [
                 "static/js/require.js",

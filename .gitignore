@@ -3,8 +3,9 @@ output
 
 # ignore node_moduels
 node_modules/**
+test/**
 
 .DS_Store
-
+npm-debug.log
 # ignore components folder
 components

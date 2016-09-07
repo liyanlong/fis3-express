@@ -11,8 +11,9 @@
     <script type="text/javascript">
         var a = 'this is sync';
         var base = require(['static/modules/base']);
-        console.log('base', base);
-        console.log('this is sync');
+        var jquery = require(['jquery'], function ($) {
+            console.log($)
+        });
 
         require(['widget/header/header', 'ui/tabs'], function (jquery) {
             console.log(arguments);

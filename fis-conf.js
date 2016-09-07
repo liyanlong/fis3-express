@@ -16,7 +16,8 @@ fis.set('project.ignore',[
     'fis-conf.js',
     'package.json',
     'LICENCS',
-    'READEME.md'
+    'READEME.md',
+    'npm-debug.log'
 ]);
 
 // 设置文本文件

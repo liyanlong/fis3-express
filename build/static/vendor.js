@@ -25,3 +25,11 @@ define('ui/tabs', ['require', 'exports', 'module', 'jquery'], function(require, 
   
 
 });
+;/*!static/modules/ui/timeline.js*/
+define('ui/timeline', ['require', 'exports', 'module'], function(require, exports, module) {
+
+  
+  console.log('this is timeline');
+  
+
+});
